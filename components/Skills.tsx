@@ -18,7 +18,7 @@ function Skills() {
       </h4>
 
       <div className="grid grid-cols-4 gap-5">
-        // TODO: Replace placeholder content
+        {/* TODO: Replace placeholder content */}
         <Skill directionLeft={true} />
         <Skill directionLeft={true} />
         <Skill directionLeft={true} />
