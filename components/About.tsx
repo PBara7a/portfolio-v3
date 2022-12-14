@@ -23,6 +23,7 @@ function About() {
       />
 
       <div className="space-y-10 px-0 md:px-10">
+        // TODO: Replace placeholder content
         <h4 className="text-[#e09000] text-4xl font-semibold">My background</h4>
         <p className="text-lg text-justify">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores,
