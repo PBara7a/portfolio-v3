@@ -8,7 +8,7 @@ function Projects() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
     >
@@ -16,9 +16,9 @@ function Projects() {
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory z-20">
-        // TODO: Add horizontal scrolling buttons // TODO: Replace placeholder
-        content
+      <div className="relative w-full flex  overflow-y-hidden overflow-x-auto snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#9AFF79]">
+        {/* TODO: Add horizontal scrolling buttons  */}
+        {/* TODO: Replace placeholder content */}
         {projects.map((_, i) => (
           <Project
             key={i}

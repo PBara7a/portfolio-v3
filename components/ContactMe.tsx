@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { motion } from "framer-motion";
 interface ContactForm {
   name: string;
   email: string;
@@ -30,7 +30,12 @@ function ContactMe() {
   };
 
   return (
-    <div className="h-screen relative flex flex-col text-center md:text-left md:flex-row max-w-7xl justify-evenly px-10 mx-auto items-center">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className="h-screen relative flex flex-col text-center md:text-left md:flex-row max-w-7xl justify-evenly px-10 mx-auto items-center"
+    >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
@@ -92,7 +97,7 @@ function ContactMe() {
           </button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
