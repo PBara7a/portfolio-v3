@@ -26,12 +26,12 @@ export interface Skill extends SanityBody {
 }
 
 export interface PageInfo extends SanityBody {
-  _type: "pageInfo"
-  heroImage:Image
-  name:string
-  role: string
-  aboutImage: Image
-  aboutTitle: string
-  aboutBody: string
-  socials: Array<Social>
+  _type: "pageInfo";
+  heroImage:Image;
+  name:string;
+  role: string;
+  aboutImage: Image;
+  aboutTitle: string;
+  aboutBody: string;
+  socials: Array<Social>;
 }
