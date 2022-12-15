@@ -10,13 +10,13 @@ function Projects() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
+      className="relative h-screen flex flex-col text-left max-w-full justify-evenly mx-auto items-center space-y-5 z-0"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="md:absolute md:top-16 uppercase tracking-[20px] text-gray-500 text-2xl">
         Projects
       </h3>
 
-      <div className="relative w-full flex  overflow-y-hidden overflow-x-auto snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#9AFF79]">
+      <div className="relative w-full flex overflow-y-hidden overflow-x-auto snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#9AFF79]">
         {/* TODO: Add horizontal scrolling buttons  */}
         {/* TODO: Replace placeholder content */}
         {projects.map((_, i) => (
@@ -28,7 +28,6 @@ function Projects() {
           />
         ))}
       </div>
-
       <div className="w-full absolute top-[30%] bg-[#9AFF7922] left-0 h-[500px] -skew-y-12" />
     </motion.div>
   );

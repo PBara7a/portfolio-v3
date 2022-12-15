@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 
 function ExperienceCard() {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center p-10 bg-[#292929] hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden justify-evenly">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 max-h-[500px] max-w-[500px] md:w-[600px] xl:w-[900px] snap-center p-10 bg-[#292929] hover:opacity-100 md:opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden justify-evenly">
       {/* TODO: Change to an Image component */}
       <motion.img
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
         viewport={{ once: true }}
-        className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+        className="w-32 h-32 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center"
         src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png"
         alt=""
       />

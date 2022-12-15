@@ -17,7 +17,7 @@ function Project({ image, title, description }: Props) {
         viewport={{ once: true }}
         src={image}
         alt={title}
-        width={650}
+        className="w-[500px]"
       />
 
       <div className="space-y-10 px-0 md:px-10 max-w-6xl">

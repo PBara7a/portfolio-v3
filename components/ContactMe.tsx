@@ -34,23 +34,23 @@ function ContactMe() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen relative flex flex-col text-center md:text-left md:flex-row max-w-7xl justify-evenly px-10 mx-auto items-center"
+      className="h-screen relative flex flex-col text-center md:text-left max-w-7xl justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="md:absolute md:top-16 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
 
       <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+        <h4 className="text-2xl md:text-4xl font-semibold text-center">
           Want to colaborate?{" "}
           <span className="decoration-[#e09000] underline">Get in touch!</span>
         </h4>
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-2 md:mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
             <input
               onChange={handleChange}
               placeholder="Name"
@@ -87,6 +87,7 @@ function ContactMe() {
             name="message"
             value={formData.message}
             className="contact-input"
+            rows={4}
             required
           />
           <button

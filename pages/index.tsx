@@ -19,23 +19,23 @@ export default function Home() {
 
       <Header />
 
-      <section id="hero" className="snap-start">
+      <section id="hero" className="snap-start mb-[70%] md:mb-0">
         <Hero />
       </section>
 
-      <section id="about" className="snap-center">
+      <section id="about" className="snap-start mb-[70%] md:mb-0">
         <About />
       </section>
 
-      <section id="skills" className="snap-start">
+      <section id="skills" className="snap-start mb-[20%] md:mb-0">
         <Skills />
       </section>
 
-      <section id="projects" className="snap-start">
+      <section id="projects" className="snap-start mb-[40%] md:mb-0">
         <Projects />
       </section>
 
-      <section id="experience" className="snap-center">
+      <section id="experience" className="snap-start">
         <WorkExperience />
       </section>
 
@@ -44,7 +44,7 @@ export default function Home() {
       </section>
 
       <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
+        <footer className="sticky bottom-4 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <img
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
