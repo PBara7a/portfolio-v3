@@ -6,7 +6,7 @@ import MailIcon from "./MailIcon";
 
 function Header() {
   return (
-    <header className="sticky top-0 p-5 flex items-start justify-between items-center max-w-7xl mx-auto z-20">
+    <header className="sticky top-0 p-5 flex justify-between items-center max-w-7xl mx-auto z-20">
       <motion.div
         initial={{
           x: -500,
