@@ -46,7 +46,7 @@ export interface Project extends SanityBody {
   technologies: Array<Skill>;
 }
 
-export interface WorkExperience extends SanityBody {
+export interface Experience extends SanityBody {
   _type: "experience";
   jobTitle: string;
   company: string;

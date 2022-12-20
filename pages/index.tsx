@@ -1,4 +1,4 @@
-import { PageInfo, Skill, Social } from "../types";
+import { PageInfo, Project, Skill, Social, Experience } from "../types";
 import Head from "next/head";
 import Link from "next/link";
 import About from "../components/About";
@@ -11,15 +11,18 @@ import WorkExperience from "../components/WorkExperience";
 import fetchPageInfo from "../utils/fetchPageInfo";
 import fetchSkills from "../utils/fetchSkills";
 import fetchSocials from "../utils/fetchSocials";
+import fetchProjects from "../utils/fetchProjects";
+import fetchWorkExperience from "../utils/fetchExperience";
 import { urlFor } from "../sanity";
 
 type Props = {
   pageInfo: PageInfo;
   socials: Array<Social>;
   skills: Array<Skill>;
+  projects: Array<Project>;
 };
 
-export default function Home({ pageInfo, skills, socials }: Props) {
+export default function Home({ pageInfo, skills, socials, projects }: Props) {
   return (
     <div className="bg-[#242424] text-white h-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden z-0 scrollbar scrollbar-track-transparent scrollbar-thumb-transparent scroll-smooth">
       <Head>
@@ -43,7 +46,7 @@ export default function Home({ pageInfo, skills, socials }: Props) {
       </section>
 
       <section id="projects" className="snap-start mb-[40%] md:mb-0">
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       <section id="experience" className="snap-start">
@@ -73,12 +76,16 @@ export async function getStaticProps() {
   const pageInfo = await fetchPageInfo();
   const skills = await fetchSkills();
   const socials = await fetchSocials();
-  const orderedSkills = skills.sort((a, b) => a.priority - b.priority);
+  const projects = await fetchProjects();
+  const orderedSkills = skills
+    .sort((a, b) => a.priority - b.priority)
+    .slice(0, 12);
   return {
     props: {
       pageInfo,
       skills: orderedSkills,
       socials,
+      projects,
     },
     revalidate: 10, // TODO: Change later when ready to deploy
   };
