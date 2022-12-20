@@ -19,5 +19,10 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'priority',
+      title: 'Priority',
+      type: 'number',
+    }),
   ],
 })

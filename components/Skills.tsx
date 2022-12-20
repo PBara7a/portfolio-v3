@@ -1,8 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Skill from "./Skill";
+import SkillComponent from "./Skill";
+import { Skill } from "../types";
 
-function Skills() {
+type Props = {
+  skills: Array<Skill>;
+};
+
+function Skills({ skills }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,19 +25,13 @@ function Skills() {
         </h4>
 
         <div className="grid grid-cols-4 gap-5">
-          {/* TODO: Replace placeholder content */}
-          <Skill directionLeft={true} />
-          <Skill directionLeft={true} />
-          <Skill directionLeft={true} />
-          <Skill directionLeft={true} />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill />
-          <Skill directionLeft={true} />
-          <Skill directionLeft={true} />
-          <Skill directionLeft={true} />
-          <Skill directionLeft={true} />
+          {skills.map((skill, i) => (
+            <SkillComponent
+              key={skill._id}
+              skill={skill}
+              directionLeft={[4, 5, 6, 7].includes(i)}
+            />
+          ))}
         </div>
       </div>
     </motion.div>

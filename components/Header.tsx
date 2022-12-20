@@ -3,8 +3,13 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import MailIcon from "./MailIcon";
+import { Social } from "../types";
 
-function Header() {
+type Props = {
+  socials: Array<Social>;
+};
+
+function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 p-5 flex justify-between items-center max-w-7xl mx-auto z-20">
       <motion.div
@@ -21,16 +26,14 @@ function Header() {
         transition={{ duration: 1 }}
         className="flex flex-row items-center"
       >
-        <SocialIcon
-          url="https://linkedin.com/in/paulo-barata"
-          fgColor="grey"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://github.com/PBara7a"
-          fgColor="grey"
-          bgColor="transparent"
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="grey"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
 
       <motion.div

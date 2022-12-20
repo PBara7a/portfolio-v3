@@ -23,12 +23,13 @@ export interface Skill extends SanityBody {
   _type: "skill";
   image: Image;
   title: string;
+  priority: number;
 }
 
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
-  heroImage:Image;
-  name:string;
+  heroImage: Image;
+  sentences: Array<string>;
   role: string;
   aboutImage: Image;
   aboutTitle: string;
