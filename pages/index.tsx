@@ -11,6 +11,7 @@ import WorkExperience from "../components/WorkExperience";
 import fetchPageInfo from "../utils/fetchPageInfo";
 import fetchSkills from "../utils/fetchSkills";
 import fetchSocials from "../utils/fetchSocials";
+import { urlFor } from "../sanity";
 
 type Props = {
   pageInfo: PageInfo;
@@ -34,7 +35,7 @@ export default function Home({ pageInfo, skills, socials }: Props) {
       </section>
 
       <section id="about" className="snap-start mb-[70%] md:mb-0">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
 
       <section id="skills" className="snap-start mb-[20%] md:mb-0">
@@ -58,7 +59,7 @@ export default function Home({ pageInfo, skills, socials }: Props) {
           <div className="flex items-center justify-center">
             <img
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              src="profile-pic.png"
+              src={urlFor(pageInfo.heroImage).url()}
               alt="Go back up"
             />
           </div>
