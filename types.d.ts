@@ -36,3 +36,24 @@ export interface PageInfo extends SanityBody {
   aboutBody: string;
   socials: Array<Social>;
 }
+
+export interface Project extends SanityBody {
+  _type: "project";
+  title: string;
+  image: Image;
+  linkToBuild: string;
+  summary: string;
+  technologies: Array<Skill>;
+}
+
+export interface WorkExperience extends SanityBody {
+  _type: "experience";
+  jobTitle: string;
+  company: string;
+  companyLogo: Image;
+  dateStarted: string;
+  dateEnded: string;
+  summaryPoints: Array<string>;
+  technologies: Array<Skill>;
+  isCurrentlyWorkingHere: boolean;
+}
