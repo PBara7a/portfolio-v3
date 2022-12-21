@@ -12,7 +12,7 @@ import fetchPageInfo from "../utils/fetchPageInfo";
 import fetchSkills from "../utils/fetchSkills";
 import fetchSocials from "../utils/fetchSocials";
 import fetchProjects from "../utils/fetchProjects";
-import fetchWorkExperience from "../utils/fetchExperience";
+import fetchExperience from "../utils/fetchExperience";
 import { urlFor } from "../sanity";
 
 type Props = {
@@ -20,9 +20,10 @@ type Props = {
   socials: Array<Social>;
   skills: Array<Skill>;
   projects: Array<Project>;
+  experience: Array<Experience>;
 };
 
-export default function Home({ pageInfo, skills, socials, projects }: Props) {
+export default function Home({ pageInfo, skills, socials, projects, experience }: Props) {
   return (
     <div className="bg-[#242424] text-white h-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden z-0 scrollbar scrollbar-track-transparent scrollbar-thumb-transparent scroll-smooth">
       <Head>
@@ -50,7 +51,7 @@ export default function Home({ pageInfo, skills, socials, projects }: Props) {
       </section>
 
       <section id="experience" className="snap-start">
-        <WorkExperience />
+        <WorkExperience experience={experience} />
       </section>
 
       <section id="contact" className="snap-start">
@@ -77,6 +78,7 @@ export async function getStaticProps() {
   const skills = await fetchSkills();
   const socials = await fetchSocials();
   const projects = await fetchProjects();
+  const experience = await fetchExperience();
   const orderedSkills = skills
     .sort((a, b) => a.priority - b.priority)
     .slice(0, 12);
@@ -86,6 +88,7 @@ export async function getStaticProps() {
       skills: orderedSkills,
       socials,
       projects,
+      experience,
     },
     revalidate: 10, // TODO: Change later when ready to deploy
   };
